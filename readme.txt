@@ -48,12 +48,12 @@ git commit -m "test.txt"
 
 五.添加远程库
 在GitHub创建一个Git仓库,Create a new repo.
- git remote add origin https://github.com/fzhqzxguest/learngit
+ git remote add origin https://github.com/fzhqzxguest/learngit.git
 
  git remote add origin git@github.com:michaelliao/learngit.git    //ssh
 
  git push -u origin master
- git push https://github.com/fzhqzxguest/learngit.git master 
+ git remote push https://github.com/fzhqzxguest/learngit.git master 
  从现在起，只要本地作了提交，就可以通过命令：
 git push origin master 
 
