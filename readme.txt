@@ -48,7 +48,7 @@ git commit -m "test.txt"
  或者用
 git push https://github.com/fzhqzxguest/demo.git master 
 
-六、一些问题解决（换github网址时，换问题3解决）
+六、一些问题解决（换github网址时，换问题2解决）
 参照 http://www.jianshu.com/p/01975e421ddb
 
 问题1：
