@@ -40,7 +40,7 @@ git commit -m "test.txt"
 在GitHub创建一个Git仓库,Create a new repo.
  git remote add origin https://github.com/fzhqzxguest/learngit.git //https
  git remote add origin git@github.com:michaelliao/learngit.git    //ssh
- git push -u origin master
+ git remote add origin https://github.com/fzhqzxguest/learngit.git
  
  从现在起，只要本地作了提交，就可以通过命令：
  git push origin master 
@@ -48,7 +48,7 @@ git commit -m "test.txt"
  或者用
 git push https://github.com/fzhqzxguest/demo.git master 
 
-六、一些问题解决
+六、一些问题解决（换github网址时，换问题3解决）
 参照 http://www.jianshu.com/p/01975e421ddb
 
 问题1：
@@ -60,12 +60,13 @@ fatal:remote origin already exists.
 
 问题2：
 解决：
-用户名和密码对应的是github上的
+一般push前要先pull以下
+键入$git pull origin master
+再键入 git push https://github.com/fzhqzxguest/demo.git master 
 
 问题3：
 解决：
-一般push前要先pull以下
-键入$git pull origin master
+用户名和密码对应的是github上的
 
 问题4：
 
@@ -78,3 +79,6 @@ git 在pull或者合并分支的时候有时会遇到这个界面。可以不管
 
 七、注意点
 考虑到版本还会更新，而master是主分支，可以在其下新建一个develop分支，最后开发完毕后合并到master中(还不是很懂下次碰到问题在解决)
+
+
+
