@@ -48,7 +48,7 @@ git commit -m "test.txt"
 
 五.添加远程库
 在GitHub创建一个Git仓库,Create a new repo.
- git remote add origin https://github.com/fzhqzxguest/learngit.git
+ git remote add origin https://github.com/fzhqzxguest/learngit
 
  git remote add origin git@github.com:michaelliao/learngit.git    //ssh
 
