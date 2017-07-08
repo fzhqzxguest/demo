@@ -1,7 +1,7 @@
 				版本管理工具介绍—Git篇
 一.安装完成后，还需要最后一步设置，在命令行输入：
- git config --global user.name fzhqzxguest
- git config --global user.email fzhqzxguest@gmail.com
+ git config --global user.name 用户名
+ git config --global user.email 邮箱t@gmail.com
 
 二.创建版本库
 1.第一步，选择一个合适的地方，创建一个空目录(D:/learngit)：
@@ -48,10 +48,14 @@ git commit -m "test.txt"
 
 五.添加远程库
 在GitHub创建一个Git仓库,Create a new repo.
- git remote add origin https://github.com/fzhqzxguest/learngit
+ git remote add origin https://github.com/fzhqzxguest/learngit  //https
 
  git remote add origin git@github.com:michaelliao/learngit.git    //ssh
 
- git push -u origin master从现在起，只要本地作了提交，就可以通过命令：
+ git push -u origin master
 
+接下来，可用第三、第四步骤来上传，修改和删除文件等操作。
+
+
+从现在起，只要本地作了提交，就可以通过命令：
  git push origin master
