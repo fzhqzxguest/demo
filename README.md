@@ -34,3 +34,7 @@ http://rogerdudler.github.io/git-guide/index.zh.html
 Git教程 - 廖雪峰的官方网站
 
 http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+
+「Git」使用笔记 「Git」指令大全 「Git」命令5分钟入门
+
+http://www.jianshu.com/p/bd5fc88f6119
