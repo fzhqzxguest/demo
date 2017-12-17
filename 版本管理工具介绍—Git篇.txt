@@ -1,4 +1,4 @@
-				版本管理工具介绍—Git篇
+﻿				版本管理工具介绍—Git篇
 一.安装完成后，还需要最后一步设置，在命令行输入：
  git config --global user.name fz
  git config --global user.email fz@gmail.com
@@ -14,7 +14,7 @@ git init
 Git is a version control system.
 Git is free software.
 2.用命令git add告诉Git，把文件添加到仓库(此步可撤消)：
-git add readme.txt
+git add readme.txt     //批量添加 “ git add .”
 git status
 
 此步可撤消，撤消命令如下：
