@@ -14,7 +14,7 @@ git init
 Git is a version control system.
 Git is free software.
 2.用命令git add告诉Git，把文件添加到仓库(此步可撤消)：
-git add readme.txt     //批量添加 “ git add .”
+git add readme.txt     //批量添加 “ git add .” 注意有个点
 git status
 
 此步可撤消，撤消命令如下：
@@ -76,6 +76,22 @@ git 在pull或者合并分支的时候有时会遇到这个界面。可以不管
 2.修改最上面那行黄色合并信息,可以不修改
 3.按键盘左上角"Esc"
 4.输入":wq",注意是冒号+wq,按回车键即可
+
+
+
+问题5：
+Git--将服务器代码更新到本地
+1. git status（查看本地分支文件信息，确保更新时不产生冲突）
+
+2. git checkout -- [file name] （若文件有修改，可以还原到最初状态; 若文件需要更新到服务器上，应该先merge到服务器，再更新到本地）
+
+3. git branch（查看当前分支情况）
+
+4. git checkout [remote branch](若分支为本地分支，则需切换到服务器的远程分支)
+
+5. git pull
+
+若命令执行成功，则更新代码成功！
 
 七、注意点
 考虑到版本还会更新，而master是主分支，可以在其下新建一个develop分支，最后开发完毕后合并到master中(还不是很懂下次碰到问题在解决)
