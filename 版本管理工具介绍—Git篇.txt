@@ -8,7 +8,7 @@ cd D:
 mkdir learngit
 cd learngit
 2.第二步，通过git init命令把这个目录变成Git可以管理的仓库：
-git init
+git initgit
 三.把文件添加到版本库
 1.言归正传，现在我们在D:/learngit目录下，编写一个readme.txt文件，内容如下：
 Git is a version control system.
@@ -90,7 +90,7 @@ http://www.cnblogs.com/sunshine2016/p/5749098.html
 2. git checkout -- [file name] （若文件有修改，可以还原到最初状态; 若文件需要更新到服务器上，应该先merge到服务器，再更新到本地）
 如：git checkout -- 版本管理工具介绍—Git篇.txt
 3.git push origin master
-3. git add -A
+3. git add -A   //批量添加 “ git add .” 注意有个点
 4. git commit -m "备注说明"
 5. git branch（查看当前分支情况）
 
