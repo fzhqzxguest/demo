@@ -1,4 +1,8 @@
-﻿phpstudy
+﻿21分钟 MySQL 入门教程
+
+http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html
+
+phpstudy
 
 一、导入数据库命令
 C:\phpStudy>mysql\bin\mysql.exe -uroot -proot playm3u8 --default-character-set=utf8 0<C:\down_qqxf.sql
