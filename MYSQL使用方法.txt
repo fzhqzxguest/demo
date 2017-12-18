@@ -1,0 +1,236 @@
+﻿phpstudy
+
+一、导入数据库命令
+C:\phpStudy>mysql\bin\mysql.exe -uroot -proot playm3u8 --default-character-set=utf8 0<C:\down_qqxf.sql
+C:\phpStudy>mysql\bin\mysql.exe -uroot -proot playm3u8  < C:\down_qqxf.sql
+C:\phpStudy>mysql\bin\mysql.exe -uroot -proot wangpan < C:\wangpan.sql
+
+
+二、MYSQL命令
+cmd下
+cd\
+cd phpStudy/MYSQL/BIN
+
+
+1.登录到MySQL数据库
+mysql -h 主机名 -u 用户名 -p
+mysql -h127.0.0.1 -uroot -proot
+
+create database 数据库名 [其他选项];
+create database samp_db character set utf8;
+create database samp_db character set gbk;
+
+2.查看已经创建了哪些数据库
+ show databases;
+
+3.退出
+exit quit
+
+4.两种方式对数据库进行使用的选择:
+
+一: 在登录数据库时指定, 命令: mysql -D 所选择的数据库名 -h 主机名 -u 用户名 -p
+
+例如登录时选择刚刚创建的数据库: mysql -D samp_db -u root -p
+
+二: 在登录后使用 use 语句指定, 命令: use 数据库名;
+
+ use samp_db; 来选择刚刚创建的数据库, 选择成功后会提示: Database changed
+ SELECT DATABASE();  来查看是不是刚刚创建的数据库
+
+5.创建数据库表
+create table 表名称(列声明);
+以创建 students 表为例, 表中将存放 学号(id)、姓名(name)、性别(sex)、年龄(age)、联系电话(tel) 这些内容:
+
+
+
+	create table students(
+id int unsigned not null auto_increment primary key,
+name char(8) not null,
+sex char(4) not null,
+age tinyint unsigned not null,
+tel char(13) null default "-"
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+以上带有ENGINE=MyISAM DEFAULT CHARSET=utf8或ENGINE=MyISAM DEFAULT CHARSET=gbk
+
+
+	create table token(
+id int unsigned not null auto_increment primary key,
+ url varchar(300) ,
+ info char(40) not null
+
+);
+
+
+	
+	create table Student(
+ sname nchar(10) primary key,
+ sex nchar(2) not null,
+ bir datetime
+);
+	
+	对于一些较长的语句在命令提示符下可能容易输错, 因此我们可以通过任何文本编辑器将语句输入好后保存为 createtable.sql 的文件中, 通过命令提示符下的文件重定向执行执行该脚本。
+
+打开命令提示符, 输入: mysql -D samp_db -u root -p < createtable.sql
+
+(提示: 1.如果连接远程主机请加上 -h 指令; 2. createtable.sql 文件若不在当前工作目录下需指定文件的完整路径。)
+	
+6.可查看已创建了表的名称;
+    show tables; 
+  命令可查看已创建的表的详细信息。
+  describe 表名;
+  
+ 7.向表中插入数据
+ insert [into] 表名 [(列名1, 列名2, 列名3, ...)] values (值1, 值2, 值3, ...);
+ 
+ insert into students values(NULL, "王刚", "男", 20, "13811371377");
+  insert into students values(NULL, "王刚刚", "男", 22, "13811371378");
+ 
+ 说明：有时我们只需要插入部分数据, 或者不按照列的顺序进行插入, 可以使用这样的形式进行插入:
+
+insert into students (name, sex, age) values("孙丽华", "女", 21);
+
+8.查询表中的数据
+select 列名称 from 表名称 [查询条件];
+
+例如要查询 students 表中所有学生的名字和年龄, 输入语句 select name, age from students; 执行结果如下:
+select name,age from students;
+
+也可以使用通配符 * 查询表中所有的内容, 语句: select * from students;
+
+
+说明：
+按特定条件查询:
+
+where 关键词用于指定查询条件, 用法形式为: select 列名称 from 表名称 where 条件;
+
+以查询所有性别为女的信息为例, 输入查询语句: select * from students where sex="女";
+
+示例:
+
+查询年龄在21岁以上的所有人信息: select * from students where age > 21;
+
+查询名字中带有 "王" 字的所有人信息: select * from students where name like "%王%";
+
+查询id小于5且年龄大于20的所有人信息: select * from students where id<5 and age>20;
+
+9.更新表中的数据
+
+update 语句可用来修改表中的数据, 基本的使用形式为:
+
+update 表名称 set 列名称=新值 where 更新条件;
+
+使用示例:
+
+将id为5的手机号改为默认的"-": update students set tel=default where id=5;
+
+将所有人的年龄增加1: update students set age=age+1;
+
+将手机号为 13288097888 的姓名改为 "张伟鹏", 年龄改为 19:
+ update students set name="张伟鹏", age=19 where tel="13811371378";
+
+10.删除表中的数据（记录）
+
+delete 语句用于删除表中的数据, 基本用法为:
+
+delete from 表名称 where 删除条件;
+
+使用示例:
+
+删除id为2的行: delete from students where id=2;
+
+删除所有年龄小于21岁的数据: delete from students where age<20;
+
+删除表中的所有数据: delete from students;
+
+
+11.创建后表的修改
+alter table 语句用于创建后对表的修改, 基础用法如下:
+
+11.添加列
+
+基本形式: alter table 表名 add 列名 列数据类型 [after 插入位置];
+
+示例:
+
+在表的最后追加列 address: alter table students add address char(60);
+
+在名为 age 的列后插入列 birthday: alter table students add birthday date after age;
+
+12.修改列
+
+基本形式: alter table 表名 change 列名称 列新名称 新数据类型;
+
+示例:
+
+将表 tel 列改名为 telphone: alter table students change tel telphone char(13) default "-";
+
+将 name 列的数据类型改为 char(16): alter table students change name name char(16) not null;
+
+13.删除列
+
+基本形式: alter table 表名 drop 列名称;
+
+示例:
+
+删除 birthday 列: alter table students drop birthday;
+
+14.重命名表
+
+基本形式: alter table 表名 rename 新表名;
+
+示例:
+
+重命名 students 表为 workmates: alter table students rename workmates;
+
+15.删除整张表
+
+基本形式: drop table 表名;
+
+示例: 删除 workmates 表: drop table workmates;
+
+16.删除整个数据库
+
+基本形式: drop database 数据库名;
+
+示例: 删除 samp_db 数据库: drop database samp_db;
+
+
+二、为远程数据库添加数据表
+
+1.用phpMyAdmin先进入远程数据库zago_18607984_zzidc内，进入phpMyAdmin里的“SQL”下。
+控制面板：http://cpanel.zaghost.com/
+
+2.用如下命令新建一张表（表名token），再点击“执行”。
+
+	create table token(
+id int unsigned not null auto_increment primary key,
+ url varchar(300) ,
+ info char(40) not null
+
+);
+
+3.添加一条记录，用如下SQL命令:
+insert into token values(NULL,"21.1a9abbbebba8dc5a81a2ba6ef88327b4.2592000.1502366469.4148395334-1572671", "1"); 
+
+
+也可用intodatabase.php中的这两行语句添加:
+$sql2 = 'insert into token values(NULL,"'.$token.'", "1")'; //数据表插入记录
+mysql_query($sql2);
+
+
+以下是删除记录
+
+$sql = 'delete from token where info=1'; //删除表中的数据（记录）
+mysql_query($sql); 
+
+4.用token.php调用和intodatabase.php为数据表添加token值。
+
+http://fzhqzxguest.zaghost.com/baidupcs/token.php?url=1.mp4
+
+http://fzhqzxguest.zaghost.com/baidupcs/intodatabase.php?url=21.1a9abbbebba8dc5a81a2ba6ef88327b4.2592000.1502366469.4148395334-1572671
+
+
+
+
