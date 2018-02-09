@@ -15,7 +15,7 @@ This project was largely inspired by [GangZhuo/BaiduPCS](https://github.com/Gang
 
 > 下载 4G 文件, 只需 7分29秒
 
-> ![test_4g](./assets/test/test_4g.png)
+> ![test_4g](https://github.com/iikira/BaiduPCS-Go/raw/master/assets/test/test_4g.png)
 
 > 自己感受一下吧
 
