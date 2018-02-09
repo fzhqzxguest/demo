@@ -1,7 +1,7 @@
 
-版本管理工具介绍—Git篇
+# 版本管理工具介绍—Git篇
 
-http://www.imooc.com/learn/208
+[GangZhuo/BaiduPCS](http://www.imooc.com/learn/208)
 
 版本控制入门 – 搬进 Github
 
