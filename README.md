@@ -1,7 +1,9 @@
 
-版本管理工具介绍—Git篇
+# 版本管理工具介绍—Git篇
+> ![test_4g](https://github.com/iikira/BaiduPCS-Go/raw/master/assets/test/test_4g.png)
+> 
+[版本管理工具介绍—Git篇](http://www.imooc.com/learn/208)
 
-http://www.imooc.com/learn/208
 
 版本控制入门 – 搬进 Github
 
