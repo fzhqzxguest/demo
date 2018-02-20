@@ -139,6 +139,7 @@ git remote -v 查看remote信息
 
 问题8（git 切换远程分支）
 https://www.cnblogs.com/libertycode/p/5858450.html
+http://www.barretlee.com/blog/2014/04/30/switch-branch-in-git/
 
 git clone只能clone远程库的master分支，无法clone所有分支，解决办法如下：
 1. 找一个干净目录，假设是git_work
