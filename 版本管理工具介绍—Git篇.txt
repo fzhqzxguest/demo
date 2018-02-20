@@ -1,5 +1,4 @@
-﻿
-				版本管理工具介绍—Git篇
+﻿				版本管理工具介绍—Git篇
 一.安装完成后，还需要最后一步设置，在命令行输入：
  git config --global user.name fz
  git config --global user.email fz@gmail.com
@@ -98,6 +97,61 @@ http://www.cnblogs.com/sunshine2016/p/5749098.html
 6.  git push -u origin master:master 
 
 若命令执行成功，则更新代码成功！
+
+
+
+问题6（请问如何删除github远程仓库中的文件夹？）
+https://www.zhihu.com/question/35634464
+http://blog.csdn.net/xing_sky/article/details/50069617
+
+1.克隆远程仓库到本地库。
+例如使用ssh方法：git clone git@github.com:xxx/xxx.git
+例如使用https方法：git clone https://github.com/fzhqzxguest/demo.git
+
+
+2.对需要删除的文件、文件夹进行如下操作:
+git rm test.txt  (删除文件)
+git rm -r test    (删除文件夹)
+3.提交修改git commit -m "Delete some files."
+4.将修改提交到远程仓库的xxx分支:
+git push origin xxx
+或
+git push https://github.com/fzhqzxguest/demo.git master
+
+问题7（请问如何提交修改文件）
+https://www.cnblogs.com/alice-fee/p/6511185.html
+http://blog.csdn.net/nly19900820/article/details/73613654
+用以下命令
+
+git pull
+
+git add .
+
+git status
+
+git commit -m"修改文件名"
+
+git push origin master
+//到此步就行。
+git diff
+
+git remote -v 查看remote信息
+
+问题8（git 切换远程分支）
+https://www.cnblogs.com/libertycode/p/5858450.html
+
+git clone只能clone远程库的master分支，无法clone所有分支，解决办法如下：
+1. 找一个干净目录，假设是git_work
+2. cd git_work
+3. git clone http://myrepo.xxx.com/project/.git ,这样在git_work目录下得到一个project子目录
+4. cd project
+5. git branch -a，列出所有分支名称如下：
+remotes/origin/dev
+remotes/origin/release
+6. git checkout -b dev origin/dev，作用是checkout远程的dev分支，在本地起名为dev分支，并切换到本地的dev分支
+7. git checkout -b release origin/release，作用参见上一步解释
+8. git checkout dev，切换回dev分支，并开始开发。
+
 
 七、注意点
 考虑到版本还会更新，而master是主分支，可以在其下新建一个develop分支，最后开发完毕后合并到master中(还不是很懂下次碰到问题在解决)
